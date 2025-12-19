@@ -1,0 +1,203 @@
+/* --- Global & Base Styling --- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5; 
+}
+
+/* --- Pamphlet Container --- */
+.pamphlet-container {
+    width: 950px;
+    max-width: 95vw;
+    height: 600px;
+    margin: 40px auto; 
+    background-color: #ffffff; 
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+    border-radius: 12px; 
+    display: flex;
+    overflow: hidden; 
+}
+
+.panel {
+    flex: 1; 
+    padding: 25px; 
+    box-sizing: border-box;
+    position: relative; 
+    z-index: 1;
+    display: flex; 
+    flex-direction: column;
+}
+
+/* --- COVER PANEL --- */
+.cover {
+    background: linear-gradient(135deg, #001227 0%, #004d9e 100%); 
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.cover::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('Background.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.3; 
+    z-index: -1; 
+}
+
+.company-logo {
+    max-width: 260px; height: auto; margin: 0 auto 15px auto;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.5));
+}
+
+/* --- SHARED BACKGROUND FOR 2ND & 3RD PANELS --- */
+.content-panel {
+    background-color: #f7faff; 
+}
+
+.content-panel::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('Background1.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    opacity: 0.15; 
+    z-index: -1; 
+}
+
+.content-panel h2 {
+    color: #0056b3; 
+    border-bottom: 4px solid #66cc66; 
+    padding-bottom: 8px; 
+    margin: 0 0 20px 0; 
+    font-size: 1.5em;
+    text-align: center;
+}
+
+/* --- SECOND LAYOUT: TRANSPARENT SERVICE CARDS --- */
+.services-grid { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between; 
+    flex-grow: 1; 
+    padding-bottom: 15px;
+}
+
+.service-card {
+    /* Transparency & Glass Effect */
+    background-color: rgba(255, 255, 255, 0.4); 
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    
+    /* Border & Shadow */
+    border: 1.2px solid #000000; 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12); 
+    
+    border-radius: 12px;
+    padding: 18px 12px; 
+    text-align: center;
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+}
+
+.service-headline { font-size: 1.05em; font-weight: 700; color: #001227; text-transform: uppercase; margin-bottom: 8px; }
+.service-card-icon { font-size: 1.8em; color: #0056b3; margin-bottom: 8px; }
+
+.service-desc {
+    font-size: 0.9em;
+    color: #000000; 
+    font-weight: 500; 
+    margin: 0; 
+    line-height: 1.4;
+}
+
+/* --- THIRD LAYOUT: TRANSPARENT SUB-CARDS --- */
+.sub-services-grid {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    margin-bottom: 15px; 
+}
+
+.sub-card {
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(4px);
+    border: 1.2px solid #000000;
+    border-radius: 8px;
+    padding: 10px 5px; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sub-card i { font-size: 1.25em; color: #0056b3; margin-bottom: 4px; }
+
+.sub-desc {
+    font-size: 0.78em;
+    color: #000000; 
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Contact Details Positioning */
+.contact-details { 
+    text-align: center; 
+    margin-top: 10px; 
+    padding-top: 10px;
+    border-top: 1px solid rgba(0, 86, 179, 0.1);
+}
+
+.company-name-highlight { 
+    font-size: 1.1em; 
+    margin-bottom: 10px !important; 
+    color: #001227; 
+}
+
+.contact-row {
+    display: flex; 
+    align-items: center; 
+    justify-content: flex-start;
+    margin: 0 auto 8px auto; 
+    width: fit-content; 
+    font-size: 0.9em;
+}
+
+.icon-box {
+    width: 32px; 
+    height: 32px; 
+    background-color: #0056b3; 
+    color: white;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    border-radius: 6px; 
+    margin-right: 12px;
+}
+
+.simple-email-icon { font-size: 1.15em; color: #0056b3; margin-right: 12px; width: 32px; text-align: center; }
+
+/* Social Icons */
+.social-icons-container { 
+    text-align: center; 
+    margin-top: 12px; 
+    padding-bottom: 10px; 
+}
+
+.social-icons-container a {
+    display: inline-block; 
+    width: 35px; 
+    height: 35px; 
+    line-height: 35px; 
+    margin: 0 5px; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 50%; 
+    font-size: 1em; 
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); 
+    text-decoration: none;
+}
+.fa-linkedin-in { color: #0077B5; }
+.fa-whatsapp { color: #25D366; }
+.fa-instagram { color: #C13584; }
+.fa-envelope { color: #0056b3; }
